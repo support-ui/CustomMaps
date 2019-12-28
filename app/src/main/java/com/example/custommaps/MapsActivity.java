@@ -75,23 +75,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 if(!success){
                     Log.e("MapActivity","Style parsing Failed");
                 }
-            }else{
-                if(hora>=23 && hora< 00){
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                        Window window = getWindow();
-                        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-                        window.setStatusBarColor(getResources().getColor(R.color.black)); //Define color blanco.
-                    }
-                    Boolean success = googleMap.setMapStyle(
-                            MapStyleOptions.loadRawResourceStyle(this,R.raw.style3)
-                    );
-
-                    if(!success){
-                        Log.e("MapActivity","Style parsing Failed");
-                    }
-                }
-
             }
+
 
         }catch (Resources.NotFoundException e){
             Log.e("MapsActivity","Can't find Style. Error");
